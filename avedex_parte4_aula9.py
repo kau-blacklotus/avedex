@@ -536,3 +536,32 @@ def criar_texto_busca(ave):
     # Normaliza o texto para facilitar a localização dos dados,
     # ignorando diferenças entre maiúsculas, minúsculas e acentos.
     return normalizar_texto(texto)
+    
+# ============================================================
+# BUSCA DE AVES NA AVEDEX
+# ============================================================
+# Função responsável por localizar aves no catálogo de acordo
+# com o termo informado pelo usuário.
+# ============================================================
+
+def buscar_aves(catalogo, termo_busca):
+    # Lista que armazenará as aves encontradas durante a busca.
+    resultados = []
+
+    # Normaliza o termo digitado pelo usuário para facilitar
+    # a pesquisa, independentemente de maiúsculas ou acentos.
+    termo = normalizar_texto(termo_busca)
+
+    # Percorre todas as aves cadastradas no catálogo.
+    for ave in catalogo:
+        # Cria o texto com os dados da ave que podem ser pesquisados.
+        texto_busca = criar_texto_busca(ave)
+
+        # Verifica se o termo informado está presente nos dados
+        # pesquisáveis da ave.
+        if termo in texto_busca:
+            resultados.append(ave)
+
+    # Retorna a lista contendo todas as aves encontradas.
+    return resultados
+    
