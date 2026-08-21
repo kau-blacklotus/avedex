@@ -427,3 +427,51 @@ while opcao_menu != "0":
 
     if opcao_menu != "0":
         pausar()
+# ============================================================
+# CONFIGURAÇÕES GERAIS DA AVEDEX
+# ============================================================
+# Esta seção reúne constantes utilizadas em diferentes partes
+# do sistema para facilitar manutenção e futuras expansões.
+# ============================================================
+
+# Define a largura padrão utilizada nos títulos, menus
+# e linhas de separação exibidas no terminal.
+LARGURA_TELA = 78
+
+# Opções disponíveis no menu principal da AveDex.
+# Cada item será exibido ao usuário para navegação
+# pelas funcionalidades do sistema.
+OPCOES_MENU = [
+    "1 - Listar aves",
+    "2 - Buscar ave",
+    "3 - Ver detalhes de uma ave",
+    "4 - Comparar duas aves",
+    "5 - Sobre a AveDex",
+    "0 - Sair"
+]
+
+# Campos considerados durante as pesquisas realizadas
+# pelo usuário. A busca verifica se o termo digitado
+# está presente em algum destes atributos da ave.
+CAMPOS_BUSCA = [
+    "nome_popular",
+    "nome_cientifico",
+    "familia",
+    "ordem",
+    "dieta_tipo"
+]
+
+# Campos exibidos na tela de comparação entre duas aves.
+# Cada tupla contém:
+# (Nome exibido ao usuário, chave do dicionário, unidade)
+CAMPOS_COMPARACAO = [
+    ("Nome científico", "nome_cientifico", ""),
+    ("Ordem", "ordem", ""),
+    ("Família", "familia", ""),
+    ("Dieta", "dieta_tipo", ""),
+    ("Habitat", "habitat", ""),
+    ("Comprimento", "comprimento_cm", "cm"),
+    ("Peso", "peso_g", "g"),
+    ("Conservação", "status_conservacao", ""),
+    ("Índice", "indice_conservacao", "")
+]
