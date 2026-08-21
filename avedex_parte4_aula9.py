@@ -475,3 +475,26 @@ CAMPOS_COMPARACAO = [
     ("Conservação", "status_conservacao", ""),
     ("Índice", "indice_conservacao", "")
 ]
+# ============================================================
+# FUNÇÕES DE INTERFACE DA AVEDEX
+# ============================================================
+# Funções responsáveis pela padronização da apresentação
+# das informações e mensagens no terminal.
+# ============================================================
+
+def linha(caractere="=", largura=LARGURA_TELA):
+    # Retorna uma linha formada pela repetição de um caractere.
+    return caractere * largura
+
+
+def titulo(texto):
+    # Exibe um título padronizado para as telas da AveDex.
+    print()
+    print(linha("="))
+    print(texto)
+    print(linha("="))
+
+
+def mensagem_aviso(texto):
+    # Exibe uma mensagem de aviso para orientar o usuário.
+    print(f"[AVISO] {texto}")
