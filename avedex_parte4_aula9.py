@@ -498,3 +498,17 @@ def titulo(texto):
 def mensagem_aviso(texto):
     # Exibe uma mensagem de aviso para orientar o usuário.
     print(f"[AVISO] {texto}")
+# ============================================================
+# MENU PRINCIPAL DA AVEDEX
+# ============================================================
+# Função responsável por apresentar ao usuário as opções
+# disponíveis no sistema.
+# ============================================================
+
+def exibir_menu():
+    # Exibe o título do menu principal da AveDex.
+    titulo("AVEDEX - MENU PRINCIPAL")
+
+    # Percorre a lista de opções e exibe cada uma no terminal.
+    for opcao in OPCOES_MENU:
+        print(opcao)
