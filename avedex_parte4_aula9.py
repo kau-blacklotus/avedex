@@ -512,3 +512,27 @@ def exibir_menu():
     # Percorre a lista de opções e exibe cada uma no terminal.
     for opcao in OPCOES_MENU:
         print(opcao)
+# ============================================================
+# PREPARAÇÃO DE DADOS PARA BUSCA
+# ============================================================
+# Função responsável por reunir e normalizar os dados de uma
+# ave que poderão ser utilizados nas pesquisas da AveDex.
+# ============================================================
+
+def criar_texto_busca(ave):
+    # Lista temporária que armazenará os valores dos campos
+    # utilizados na pesquisa.
+    valores = []
+
+    # Percorre cada campo definido nas configurações de busca.
+    for campo in CAMPOS_BUSCA:
+        # Obtém o valor do campo no cadastro da ave.
+        # Caso o campo não exista, utiliza um texto vazio.
+        valores.append(str(ave.get(campo, "")))
+
+    # Junta todos os valores em um único texto para pesquisa.
+    texto = " ".join(valores)
+
+    # Normaliza o texto para facilitar a localização dos dados,
+    # ignorando diferenças entre maiúsculas, minúsculas e acentos.
+    return normalizar_texto(texto)
